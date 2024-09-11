@@ -1,0 +1,78 @@
+body{
+    background-color: rgb(24, 23, 23);
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    width: 90%; /* Slightly wider for smaller screens */
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin: 0 auto;
+    padding: 20px; /* Add some padding for spacing */
+            
+}
+
+h1{
+    color: darkturquoise;
+    font-weight: bold;
+}
+
+.move-icon{
+    height: 100px;
+}
+
+.move-button{
+    background-color: transparent;
+    border: 3px solid darkturquoise;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin-right: 12px;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.rock-move:hover{
+    border: 3px solid rgb(202, 43, 120)
+}
+
+.paper-move:hover{
+    border: 3px solid rgb(212, 195, 37);
+}
+
+.scissors-move:hover{
+    border: 3px solid rgb(11, 173, 228)
+}
+
+.result{
+    margin-top: 60px;
+}
+
+#mirror-img{
+    transform: scaleX(-1);
+}
+
+.reset-button{
+    background-color: rgba(38, 28, 28, 0.873);
+    border: 3px solid rgb(7, 236, 171);
+    color: rgb(214, 227, 234);
+    padding: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.reset-button:hover{
+    color: crimson;
+}
+
+    /* For smaller screens */
+@media (max-width: 600px) {
+body {
+    width: 95%; /* Use more of the screen width */
+    padding: 10px; /* Reduce padding */
+  }
+}
+
+/* For larger screens */
+@media (min-width: 1400px) {
+body {
+    max-width: 1400px; /* Allow content to be wider on very large screens */
+  }
+}
