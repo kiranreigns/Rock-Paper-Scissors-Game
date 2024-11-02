@@ -63,7 +63,7 @@ h1{
 }
 
     /* For smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 422px) {
 body {
     width: 100%; /* Use more of the screen width */
     padding: 5px; /* Reduce padding */
