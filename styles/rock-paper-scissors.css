@@ -62,13 +62,26 @@ h1{
     color: crimson;
 }
 
-    /* For smaller screens */
-@media (max-width: 422px) {
-body {
-    width: 100%; /* Use more of the screen width */
-    padding: 5px; /* Reduce padding */
-  }
+/* Wrap buttons in a container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px; /* Space between buttons */
+    flex-wrap: nowrap;
 }
+
+/* For smaller screens, reduce the size of the buttons */
+@media (max-width: 422px) {
+    .move-button {
+        width: 90px;
+        height: 90px;
+    }
+
+    .move-icon {
+        height: 80px;
+    }
+}
+
 
 /* For larger screens */
 @media (min-width: 1400px) {
