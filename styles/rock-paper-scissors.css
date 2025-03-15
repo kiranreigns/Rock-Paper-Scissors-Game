@@ -1,91 +1,293 @@
-body{
-    background-color: rgb(24, 23, 23);
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    width: 90%; /* Slightly wider for smaller screens */
-    max-width: 1200px; /* Maximum width for larger screens */
-    margin: 0 auto;
-    padding: 20px; /* Add some padding for spacing */
-            
-}
-
-h1{
-    color: darkturquoise;
-    font-weight: bold;
-}
-
-.move-icon{
-    height: 100px;
-}
-
-.move-button{
-    background-color: transparent;
-    border: 3px solid darkturquoise;
-    width: 120px;
-    height: 120px;
-    border-radius: 60px;
-    margin-right: 12px;
-    cursor: pointer;
-    padding-top: 5px;
-}
-
-.rock-move:hover{
-    border: 3px solid rgb(202, 43, 120)
-}
-
-.paper-move:hover{
-    border: 3px solid rgb(212, 195, 37);
-}
-
-.scissors-move:hover{
-    border: 3px solid rgb(11, 173, 228)
-}
-
-.result{
-    margin-top: 60px;
-}
-
-#mirror-img{
-    transform: scaleX(-1);
-}
-
-.reset-button{
-    background-color: rgba(38, 28, 28, 0.873);
-    border: 3px solid rgb(7, 236, 171);
-    color: rgb(214, 227, 234);
-    padding: 5px;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-.reset-button:hover{
-    color: crimson;
-}
-
-/* Wrap buttons in a container */
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 12px; /* Space between buttons */
-    flex-wrap: nowrap;
-}
-
-/* For smaller screens, reduce the size of the buttons */
-@media (max-width: 422px) {
-    .move-button {
-        width: 90px;
-        height: 90px;
-    }
-
-    .move-icon {
-        height: 80px;
-    }
-}
-
-
-/* For larger screens */
-@media (min-width: 1400px) {
+/* Center the container and add padding */
 body {
-    max-width: 1400px; /* Allow content to be wider on very large screens */
+  background-color: rgb(24, 23, 23);
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Main container */
+.container {
+  text-align: center;
+  max-width: 800px;
+  width: 90%;
+  border-style: dotted;
+  border-color: #0088cc;
+}
+
+/* Title styling */
+h1 {
+  color: darkturquoise;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* Move icons and buttons */
+.move-icon {
+  margin: 1em;
+  height: 100px;
+}
+
+/* move the result icons 2em to the right */
+.js-moves {
+  margin-left: 1.5em;
+}
+
+.move-button {
+  background-color: transparent;
+  width: 120px;
+  height: 120px;
+  padding: 0;
+  border: 3px solid darkturquoise;
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.move-button:active {
+  transform: translateY(4px);
+}
+
+.rock-move:hover {
+  border-color: rgb(202, 43, 120);
+}
+
+.paper-move:hover {
+  border-color: rgb(212, 195, 37);
+}
+
+.scissors-move:hover {
+  border-color: rgb(11, 173, 228);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* Result area styling */
+.result {
+  font-size: 1.2rem;
+  margin-top: 40px;
+}
+
+#mirror-img {
+  transform: scaleX(-1);
+}
+
+/* Reset button styling */
+.reset-button-border {
+  margin: 1em;
+  background: linear-gradient(
+    115deg,
+    #eeaf61,
+    #fb9862,
+    #ee5d6c,
+    #ce4993,
+    #6a0d83
+  );
+  padding: 2px;
+  display: inline-block;
+  margin-bottom: 2em;
+}
+
+.reset-button {
+  background-color: rgba(38, 28, 28, 0.9);
+  border: none;
+  color: rgb(214, 227, 234);
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #222;
+  color: crimson;
+}
+
+.reset-button-border:hover {
+  background: linear-gradient(
+    230deg,
+    #eeaf61,
+    #fb9862,
+    #ee5d6c,
+    #ce4993,
+    #6a0d83
+  );
+  padding: 2.5px;
+}
+
+/* Responsive adjustments */
+/* Large screens (above 1200px) */
+@media (min-width: 1201px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .move-button {
+    width: 150px;
+    height: 150px;
+  }
+
+  .move-icon {
+    height: 120px;
+  }
+
+  .result {
+    font-size: 1.4rem;
+  }
+
+  .reset-button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
   }
 }
+
+/* Medium screens (601px to 1200px) */
+@media (min-width: 601px) and (max-width: 1200px) {
+  .container {
+    max-width: 800px;
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .move-button {
+    width: 120px;
+    height: 120px;
+  }
+
+  .move-icon {
+    height: 100px;
+  }
+
+  .button-container {
+    gap: 20px;
+  }
+}
+
+/* Small screens (mobile devices up to 600px) */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .move-button {
+    width: 80px;
+    height: 80px;
+  }
+
+  .move-icon {
+    height: 60px;
+    margin: 0.5em;
+  }
+
+  .button-container {
+    gap: 10px;
+  }
+
+  .result {
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+
+  .js-moves {
+    margin-left: 0.8em;
+  }
+
+  .reset-button-border {
+    margin: 0.8em;
+  }
+
+  .reset-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small screens (phones under 400px) */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .move-button {
+    width: 70px;
+    height: 70px;
+  }
+
+  .move-icon {
+    height: 50px;
+    margin: 0.3em;
+  }
+
+  .button-container {
+    gap: 5px;
+  }
+
+  .result {
+    font-size: 0.8rem;
+  }
+
+  .reset-button {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Handle landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .button-container {
+    margin-top: 10px;
+  }
+
+  .move-button {
+    width: 70px;
+    height: 70px;
+  }
+
+  .move-icon {
+    height: 50px;
+    margin: 0.3em;
+  }
+
+  .result {
+    margin-top: 20px;
+  }
+}
+
