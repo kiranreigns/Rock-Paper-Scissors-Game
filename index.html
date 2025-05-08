@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rock Paper and Scissors</title>
-        <link rel="stylesheet" href="styles/rock-paper-scissors.css">
-    </head>
-    <body>
-        <h1>Rock Paper Scissors</h1>
-            <div class="button-container">
-                <button class="move-button rock-move" onclick="playGame('rock');">
-                    <img class="move-icon" src="images/rock.png" alt="Rock">
-                </button>
-                <button class="move-button paper-move" onclick="playGame('paper')">
-                    <img class="move-icon" src="images/paper.png" alt="Paper">
-                </button>
-                <button class="move-button scissors-move" onclick="playGame('scissors')">
-                    <img class="move-icon" src="images/scissors.png" alt="Scissors">
-                </button>
-            </div>
-        <p class="js-result result"></p>
-        <p class="js-moves result"></p>
-        <p class="js-score result"></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper and Scissors</title>
+    <link rel="stylesheet" href="styles/rock-paper-scissors.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Rock Paper Scissors</h1>
+      <div class="button-container">
+        <button class="move-button rock-move" onclick="playGame('rock');">
+          <img class="move-icon" src="images/rock.png" alt="Rock" />
+        </button>
+        <button class="move-button paper-move" onclick="playGame('paper')">
+          <img class="move-icon" src="images/paper.png" alt="Paper" />
+        </button>
+        <button
+          class="move-button scissors-move"
+          onclick="playGame('scissors')"
+        >
+          <img class="move-icon" src="images/scissors.png" alt="Scissors" />
+        </button>
+      </div>
 
-        <button class="reset-button" onclick = "
-        score.wins = 0; 
-        score.losses = 0; 
-        score.ties = 0; 
-        localStorage.removeItem('score'); 
-        updateScoreElement();
-        ">Reset Score</button>
-    
-        <script src="scripts/rock-paper-scissors.js"></script>   
-    </body>
+      <div class="result">
+        <p class="js-result"></p>
+        <p class="js-moves"></p>
+        <p class="js-score"></p>
+      </div>
+
+      <div class="reset-button-border">
+        <button
+          class="reset-button"
+          type="button"
+          onclick="
+                score.wins = 0; 
+                score.losses = 0; 
+                score.ties = 0; 
+                localStorage.removeItem('score'); 
+                updateScoreElement();
+            "
+        >
+          Reset Score
+        </button>
+      </div>
+    </div>
+
+    <script src="scripts/rock-paper-scissors.js"></script>
+  </body>
 </html>
